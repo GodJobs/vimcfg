@@ -35,14 +35,13 @@ set fileencoding=utf-8
 set guifont=Monospace\ 12
 winpos 5 5
 syn on
-colorscheme molokai
-
+set t_Co=256
+colorscheme sunolokai           "自己写的配色方案，配合TagHighlight口味更佳
 "-------------------------------------------------------------------------------
 "plugin setting
 "-------------------------------------------------------------------------------
 "vim-powerline
 set laststatus=2
-set t_Co=256
 let g:Powline_symbols='fancy'
 
 "ctags updating
@@ -67,7 +66,7 @@ let g:voom_tree_placement = "right"
 let NERDTreeWinSize = 40
 let NERDTreeShowHidden = 1
 
-"OmniCppComplete
+"OmniCppComplete 暂时不用
 let OmniCpp_NamespaceSearch = 1
 let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowAccess = 1
@@ -106,6 +105,7 @@ let Tlist_Show_One_File           = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select         = 1
 let Tlist_Process_File_Always     = 1
+
 "win manager
 let g:winManagerWindowLayout = "FileExplorer,BufExplorer"
 
@@ -138,7 +138,7 @@ nmap <F8> :Tlist<cr><c-w>j              | "Toggle tag-list window
 
 " project
 nmap <F9> :cs kill -1<cr>:!cscope -Rb<cr>:cs a cscope.out<cr>
-nmap <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<cr>
+nmap <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<cr>:UpdateTypesFile<cr>
 
 "Move left/right
 nmap <C-L> <C-W>l
@@ -151,7 +151,7 @@ nmap k gk
 
 nmap <leader>ww :cd ~/work/myWiki/<cr>:vi index.mkd<cr>cd $OLDPWD<cr>
 
-" For conque terminal
+" For conque terminal 暂时没用
 nmap <leader>tt :ConqueTermTab bash<cr>
 nmap <leader>tv :ConqueTermVSplit bash<cr>
 nmap <leader>th :ConqueTermSplit bash<cr>
@@ -161,7 +161,7 @@ nmap <leader>th :ConqueTermSplit bash<cr>
 "-------------------------------------------------------------------------------
 imap <C-T> <cr><cr><ESC>k:call setline(".", strftime("%H:%M"))<cr>kJJ           | " insert time
 imap <C-D> <cr><cr><ESC>k:call setline(".", strftime("%Y.%m.%d"))<cr>kJJ        | " insert date
-imap {} {<ESC>o}<ESC>ko
+imap {} {}<ESC>i
 imap () ()<ESC>i
 imap [] []<ESC>i
 imap <> <><ESC>i
@@ -207,6 +207,8 @@ Bundle 'snipMate'
 "字符串自动补全
 Bundle 'AutoComplPop'
 "配色主题, 注意需要手动放~/.vim/colors/molokai.vim
-Bundle 'molokai'
+Bundle 'c.vim'
+"高亮
+Bundle 'TagHighlight'
 
 filetype plugin indent on

@@ -26,7 +26,18 @@ else
     let s:molokai_original = 0
 endif
 
-
+"sundi
+hi Class                guifg=#F0E68C   gui=bold
+hi Structure            guifg=#66D9EF   gui=bold
+hi DefinedName          guifg=#00FA9A    gui=bold
+hi Member			    guifg=#A9A9A9
+hi Label				guifg=#E6DB74    gui=bold
+hi EnumerationName      guifg=#8A2BE2
+hi EnumerationValue     guifg=#AE81FF
+hi LocalVariable        guifg=#F5F5F5
+hi GlobalVariable       guifg=#F0E68C
+   
+   
 hi Boolean         guifg=#AE81FF
 hi Character       guifg=#E6DB74
 hi Number          guifg=#AE81FF
@@ -208,4 +219,16 @@ if &t_Co > 255
    hi CursorColumn                ctermbg=234
    hi LineNr          ctermfg=250 ctermbg=234
    hi NonText         ctermfg=250 ctermbg=234
+   
+   "sundi
+   hi Class                ctermfg=205   cterm=bold
+   hi Structure            ctermfg=205   cterm=bold
+   hi DefinedName          ctermfg=49    cterm=bold
+   hi Member			   ctermfg=244
+   hi Label				   ctermfg=21    cterm=bold
+   hi EnumerationName      ctermfg=19
+   hi EnumerationValue     ctermfg=57
+   hi LocalVariable        ctermfg=100
+   hi GlobalVariable       ctermfg=93
+   
 end
